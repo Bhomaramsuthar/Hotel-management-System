@@ -1,0 +1,1083 @@
+Default reception screen - 
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+package HotelManagementSystem;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+public class Reception extends JFrame {
+    Color c1 = new Color(214, 143, 130);
+    Color c2 = new Color(84, 50, 48);
+    Color c3 = new Color(53, 28, 28);
+    Reception(){
+        super("Reception Page");
+
+// importing custom font
+
+        Font pixelFont = null;
+
+        try {
+            pixelFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/font/PressStart2P-Regular.ttf"))
+                    .deriveFont(14f); // adjust size as needed
+
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(pixelFont);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            pixelFont = new Font("Serif", Font.PLAIN, 14);
+        }
+
+//left panel
+
+        JPanel panel1 = new JPanel();
+        panel1.setLayout(null);
+        panel1.setBounds(5,5,300,820);
+        panel1.setBackground(c2);
+        add(panel1);
+
+        ImageIcon i3 = new ImageIcon(ClassLoader.getSystemResource("icon/Footer.png"));
+        Image i4 = i3.getImage().getScaledInstance(250,250,Image.SCALE_DEFAULT);
+        ImageIcon imageIcon1 =new ImageIcon(i4);
+        JLabel footer = new JLabel(imageIcon1);
+        footer.setBounds(25,550,250,250);
+        panel1.add(footer);
+
+    //adding buttons
+
+        //New Customer
+        JButton btnNC = new JButton("New Customer");
+        btnNC.setBounds(30,30,250,30);
+        btnNC.setFont(pixelFont);
+        btnNC.setBackground(c1);
+        btnNC.setForeground(c3);
+        panel1.add(btnNC);
+        btnNC.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ;
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
+
+        //Update Info
+        JButton btnUC = new JButton("Update Customer");
+        btnUC.setBounds(30,80,250,30);
+        btnUC.setFont(pixelFont);
+        btnUC.setBackground(c1);
+        btnUC.setForeground(c3);
+        panel1.add(btnUC);
+        btnUC.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ;
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
+
+        //Rooms
+        JButton btnRoom = new JButton("Rooms");
+        btnRoom.setBounds(30,130,250,30);
+        btnRoom.setFont(pixelFont);
+        btnRoom.setBackground(c1);
+        btnRoom.setForeground(c3);
+        panel1.add(btnRoom);
+        btnRoom.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ;
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
+
+        //Department
+        JButton btnDepartment = new JButton("Departments");
+        btnDepartment.setBounds(30,180,250,30);
+        btnDepartment.setFont(pixelFont);
+        btnDepartment.setBackground(c1);
+        btnDepartment.setForeground(c3);
+        panel1.add(btnDepartment);
+        btnDepartment.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ;
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
+
+        //Employee Info
+        JButton btnEI = new JButton("Employee Info");
+        btnEI.setBounds(30,230,250,30);
+        btnEI.setFont(pixelFont);
+        btnEI.setBackground(c1);
+        btnEI.setForeground(c3);
+        panel1.add(btnEI);
+        btnEI.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ;
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
+
+        //Customer Info
+        JButton btnCI = new JButton("Customer Info");
+        btnCI.setBounds(30,280,250,30);
+        btnCI.setFont(pixelFont);
+        btnCI.setBackground(c1);
+        btnCI.setForeground(c3);
+        panel1.add(btnCI);
+        btnCI.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ;
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
+
+        //Manager Info
+        JButton btnMI = new JButton("Employee Info");
+        btnMI.setBounds(30,330,250,30);
+        btnMI.setFont(pixelFont);
+        btnMI.setBackground(c1);
+        btnMI.setForeground(c3);
+        panel1.add(btnMI);
+        btnMI.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ;
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
+
+        //Check out
+        JButton btnCO = new JButton("Check Out ");
+        btnCO.setBounds(30,380,250,30);
+        btnCO.setFont(pixelFont);
+        btnCO.setBackground(c1);
+        btnCO.setForeground(c3);
+        panel1.add(btnCO);
+        btnCO.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ;
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
+
+        //Update room status
+        JButton btnUR = new JButton("Update Room");
+        btnUR.setBounds(30,430,250,30);
+        btnUR.setFont(pixelFont);
+        btnUR.setBackground(c1);
+        btnUR.setForeground(c3);
+        panel1.add(btnUR);
+        btnUR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ;
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
+
+        //PICK UP SERVICE
+        JButton btnPS = new JButton("Pick-up Service");
+        btnPS.setBounds(30,480,250,30);
+        btnPS.setFont(pixelFont);
+        btnPS.setBackground(c1);
+        btnPS.setForeground(c3);
+        panel1.add(btnPS);
+        btnPS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ;
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
+
+        //search room
+        JButton btnSR = new JButton("Search Room");
+        btnSR.setBounds(30,530,250,30);
+        btnSR.setFont(pixelFont);
+        btnSR.setBackground(c1);
+        btnSR.setForeground(c3);
+        panel1.add(btnSR);
+        btnSR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ;
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
+
+
+//right panel
+
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        panel.setBounds(310,5,1208,820);
+        panel.setBackground(new Color(84, 50, 48));
+        add(panel);
+
+        ImageIcon i1 =new ImageIcon(ClassLoader.getSystemResource("icon/dummy.gif"));
+        Image i2 = i1.getImage().getScaledInstance(400,400,Image.SCALE_DEFAULT);
+        ImageIcon imageIcon = new ImageIcon(i2);
+        JLabel dummy =new JLabel(imageIcon);
+        dummy.setBounds(200,20,800,800);
+        panel.add(dummy);
+
+//background frame
+
+        getContentPane().setBackground(new Color(53, 28, 28));
+        setLayout(null);
+        setSize(1920,1080);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new Reception();
+    }
+}
+
+
+
+Default AddEmployeeOrRoom
+
+------------------------------------------------------------------------------------------------------------
+
+package HotelManagementSystem;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+public class AddEmployeeOrRoom extends JFrame implements ActionListener{
+
+    Color c1 = new Color(214, 143, 130);
+    Color c2 = new Color(110,76,74);
+    Color c3 = new Color(53, 28, 28);
+
+    JButton addDr,addRo,addEmp,back;
+
+    AddEmployeeOrRoom(){
+        super("Add Employee or Room Page");
+
+        Font pixelFont;
+        try {
+            pixelFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/font/PressStart2P-Regular.ttf"))
+                    .deriveFont(16f);
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(pixelFont);
+        } catch (Exception e) {
+            e.printStackTrace();
+            pixelFont = new Font("Serif", Font.PLAIN, 14);
+        }
+
+//left panel
+
+        JPanel panel1 = new JPanel();
+        panel1.setLayout(null);
+        panel1.setBounds(10,10,300,765);
+        panel1.setBackground(c2);
+        add(panel1);
+
+        JLabel menu = new JLabel("MENU");
+        menu.setBounds(30,20,260,80);
+        menu.setFont(pixelFont.deriveFont(60f));
+        menu.setForeground(c3);
+        panel1.add(menu);
+
+        addEmp = new JButton("Add Employee");
+        addEmp.setBounds(30,180,235,40);
+        addEmp.setBackground(c1);
+        addEmp.setForeground(c3);
+        addEmp.setFont(pixelFont);
+        panel1.add(addEmp);
+        addEmp.addActionListener(this);
+
+        addRo = new JButton("Add Room");
+        addRo.setBounds(30,240,235,40);
+        addRo.setBackground(c1);
+        addRo.setForeground(c3);
+        addRo.setFont(pixelFont);
+        panel1.add(addRo);
+        addRo.addActionListener(this);
+
+        addDr = new JButton("Add Driver");
+        addDr.setBounds(30,300,235,40);
+        addDr.setBackground(c1);
+        addDr.setForeground(c3);
+        addDr.setFont(pixelFont);
+        panel1.add(addDr);
+        addDr.addActionListener(this);
+
+        back = new JButton("Back");
+        back.setBounds(30,705,235,40);
+        back.setBackground(c1);
+        back.setForeground(c3);
+        back.setFont(pixelFont);
+        panel1.add(back);
+        back.addActionListener(this);
+
+//right panel
+
+        JPanel panel2 = new JPanel();
+        panel2.setLayout(null);
+        panel2.setBounds(320,10,1200,765);
+        panel2.setBackground(c2);
+        add(panel2);
+
+        ImageIcon i1 =new ImageIcon(ClassLoader.getSystemResource("icon/dummy.gif"));
+        Image i2 = i1.getImage().getScaledInstance(400,400,Image.SCALE_DEFAULT);
+        ImageIcon imageIcon = new ImageIcon(i2);
+        JLabel dummy =new JLabel(imageIcon);
+        dummy.setBounds(200,20,800,800);
+        panel2.add(dummy);
+
+
+//background
+
+        getContentPane().setBackground(c3);
+        setLayout(null);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==addRo){
+            try {
+                new addRoom();
+
+            }catch (Exception E){
+                E.printStackTrace();
+            }
+        } else if (e.getSource()==addEmp) {
+            try {
+                new addEmployee();
+
+            }catch (Exception E){
+                E.printStackTrace();
+            }
+        }else if (e.getSource()==addDr){
+            try {
+                new addDriver();
+
+            }catch (Exception E){
+                E.printStackTrace();
+            }
+
+        }else {
+            new Admin();
+            setVisible(false);
+        }
+    }
+
+    public static void main(String[] args) {
+        new AddEmployeeOrRoom();
+    }
+}
+
+
+Deafult addEmployee
+
+-------------------------------------------------------------------------------------------------------------------
+
+package HotelManagementSystem;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+public class addEmployee extends JFrame implements ActionListener {
+
+    Color c1 = new Color(214, 143, 130);
+    Color c2 = new Color(110,76,74);
+    Color c3 = new Color(53, 28, 28);
+
+
+    JTextField jt1,jt2,jt3,jt4,jt5,jt6;
+    JComboBox jc1;
+    JButton b1,b2;
+    JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9;
+    JRadioButton jr1,jr2;
+
+    addEmployee(){
+
+        super("Add Employee Page");
+
+        Font pixelFont;
+        try {
+            pixelFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/font/PressStart2P-Regular.ttf"))
+                    .deriveFont(16f);
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(pixelFont);
+        } catch (Exception e) {
+            e.printStackTrace();
+            pixelFont = new Font("Serif", Font.PLAIN, 14);
+        }
+
+//labels
+
+        l1 = new JLabel("Add Employee Details");
+        l1.setBounds(300,30,650,60);
+        l1.setFont(pixelFont.deriveFont(25f));
+        l1.setForeground(c3);
+        add(l1);
+
+        l2 = new JLabel("Name");
+        l2.setBounds(120,100,200,30);
+        l2.setFont(pixelFont);
+        l2.setForeground(c3);
+        add(l2);
+
+        l3 = new JLabel("Age");
+        l3.setBounds(120,150,200,30);
+        l3.setFont(pixelFont);
+        l3.setForeground(c3);
+        add(l3);
+
+        l4 = new JLabel("Gender");
+        l4.setBounds(120,200,200,30);
+        l4.setFont(pixelFont);
+        l4.setForeground(c3);
+        add(l4);
+
+        l5 = new JLabel("Job");
+        l5.setBounds(120,250,200,30);
+        l5.setFont(pixelFont);
+        l5.setForeground(c3);
+        add(l5);
+
+        l6 = new JLabel("Salary");
+        l6.setBounds(120,300,200,30);
+        l6.setFont(pixelFont);
+        l6.setForeground(c3);
+        add(l6);
+
+        l7 = new JLabel("Phone");
+        l7.setBounds(120,350,200,30);
+        l7.setFont(pixelFont);
+        l7.setForeground(c3);
+        add(l7);
+
+        l8 = new JLabel("Aadhar");
+        l8.setBounds(120,400,200,30);
+        l8.setFont(pixelFont);
+        l8.setForeground(c3);
+        add(l8);
+
+        l9 = new JLabel("Email");
+        l9.setBounds(120,450,200,30);
+        l9.setFont(pixelFont);
+        l9.setForeground(c3);
+        add(l9);
+
+//textfields
+
+        jt1 = new JTextField();
+        jt1.setBounds(340,100,200,30);
+        jt1.setForeground(c3);
+        jt1.setBackground(c1);
+        jt1.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt1);
+
+        jt2 = new JTextField();
+        jt2.setBounds(340,150,200,30);
+        jt2.setForeground(c3);
+        jt2.setBackground(c1);
+        jt2.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt2);
+
+        jt3 = new JTextField();
+        jt3.setBounds(340,300,200,30);
+        jt3.setForeground(c3);
+        jt3.setBackground(c1);
+        jt3.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt3);
+
+        jt4 = new JTextField();
+        jt4.setBounds(340,350,200,30);
+        jt4.setForeground(c3);
+        jt4.setBackground(c1);
+        jt4.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt4);
+
+        jt5 = new JTextField();
+        jt5.setBounds(340,400,200,30);
+        jt5.setForeground(c3);
+        jt5.setBackground(c1);
+        jt5.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt5);
+
+        jt6 = new JTextField();
+        jt6.setBounds(340,450,200,30);
+        jt6.setForeground(c3);
+        jt6.setBackground(c1);
+        jt6.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt6);
+
+//combobox
+
+        jc1 = new JComboBox(new String[] {"Select","Front Desk","Housekeeping","Kitchen Staff","Room Service","Manager","Accountant","Chef"});
+        jc1.setBounds(340,250,200,30);
+        jc1.setForeground(c3);
+        jc1.setBackground(c1);
+        jc1.setFont(new Font("poppins",Font.BOLD,18));
+        add(jc1);
+
+//radiobutton
+
+        jr1 = new JRadioButton("Male");
+        jr1.setBounds(340,200,100,30);
+        jr1.setBackground(c2);
+        jr1.setForeground(c3);
+        jr1.setFont(new Font("poppins",Font.BOLD,18));
+        add(jr1);
+
+        jr2 = new JRadioButton("Female");
+        jr2.setBounds(440,200,100,30);
+        jr2.setBackground(c2);
+        jr2.setForeground(c3);
+        jr2.setFont(new Font("poppins",Font.BOLD,18));
+        add(jr2);
+
+//butons
+
+        b1 = new JButton("Save");
+        b1.setBounds(100,550,180,40);
+        b1.setBackground(c1);
+        b1.setFont(pixelFont);
+        b1.setForeground(c3);
+        b1.addActionListener(this);
+        add(b1);
+
+        b2 = new JButton("Back");
+        b2.setBounds(400,550,180,40);
+        b2.setBackground(c1);
+        b2.setFont(pixelFont);
+        b2.setForeground(c3);
+        b2.addActionListener(this);
+        add(b2);
+
+//background
+
+        setUndecorated(true);
+        setLayout(null);
+        getContentPane().setBackground(c2);
+        setLocation(350,100);
+        setSize(1090,665);
+        setVisible(true);
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==b1){
+            try{
+                String name = jt1.getText();
+                String age = jt2.getText();
+                String gender = null;
+                if (jr1.isSelected()){
+                    gender = "Male";
+                }else if (jr2.isSelected()){
+                    gender = "Female";
+                }
+                String job = (String) jc1.getSelectedItem();
+                String salary =jt3.getText();
+                String phone = jt4.getText();
+                String aadhar =jt5.getText();
+                String email = jt6.getText();
+
+                if (name.isEmpty() || age.isEmpty() ||
+                        gender==null || "Select".equals(job) ||
+                        salary.isEmpty() || phone.isEmpty() ||
+                        aadhar.isEmpty() || email.isEmpty() ){
+
+                            JOptionPane.showMessageDialog(this,
+                                    "Please fill all fields before saving!",
+                                    "Missing Information",JOptionPane.WARNING_MESSAGE
+                            );
+                            return;
+                }
+
+                //all input are completed
+
+                connects c =new connects();
+                String q = "INSERT INTO employee VALUES ('"+name+"','"+age+"','"+gender+"','"+job+"','"+salary+"','"+phone+"','"+aadhar+"','"+email+"')";
+                c.statement.executeUpdate(q);
+
+                JOptionPane.showMessageDialog(this,
+                        "Employee Successfully Added");
+                setVisible(false);
+
+
+            }catch (Exception E){
+                E.printStackTrace();
+            }
+
+        }else{
+            setVisible(false);
+        }
+    }
+
+    public static void main(String[] args) {
+        new addEmployee();
+    }
+}
+
+
+Default addDriver 
+
+------------------------------------------------------------------------------------------------------------
+
+package HotelManagementSystem;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+public class addDriver extends JFrame implements ActionListener {
+
+    Color c1 = new Color(214, 143, 130);
+    Color c2 = new Color(110,76,74);
+    Color c3 = new Color(53, 28, 28);
+
+
+    JTextField jt1,jt2,jt3,jt4,jt5;
+    JComboBox jc1,jc2;
+    JButton b1,b2;
+    JLabel l1,l2,l3,l4,l5,l6,l7,l8;
+
+
+    addDriver(){
+
+        super("Add Driver Page");
+
+        Font pixelFont;
+        try {
+            pixelFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/font/PressStart2P-Regular.ttf"))
+                    .deriveFont(16f);
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(pixelFont);
+        } catch (Exception e) {
+            e.printStackTrace();
+            pixelFont = new Font("Serif", Font.PLAIN, 14);
+        }
+
+//labels
+
+        l1 = new JLabel("Add Driver Details");
+        l1.setBounds(300,30,650,60);
+        l1.setFont(pixelFont.deriveFont(25f));
+        l1.setForeground(c3);
+        add(l1);
+
+        l2 = new JLabel("Name");
+        l2.setBounds(120,100,200,30);
+        l2.setFont(pixelFont);
+        l2.setForeground(c3);
+        add(l2);
+
+        l3 = new JLabel("Age");
+        l3.setBounds(120,150,200,30);
+        l3.setFont(pixelFont);
+        l3.setForeground(c3);
+        add(l3);
+
+        l4 = new JLabel("Gender");
+        l4.setBounds(120,200,200,30);
+        l4.setFont(pixelFont);
+        l4.setForeground(c3);
+        add(l4);
+
+        l5 = new JLabel("Car Company");
+        l5.setBounds(120,250,200,30);
+        l5.setFont(pixelFont);
+        l5.setForeground(c3);
+        add(l5);
+
+        l6 = new JLabel("Car Name");
+        l6.setBounds(120,300,200,30);
+        l6.setFont(pixelFont);
+        l6.setForeground(c3);
+        add(l6);
+
+        l7 = new JLabel("Availability");
+        l7.setBounds(120,350,200,30);
+        l7.setFont(pixelFont);
+        l7.setForeground(c3);
+        add(l7);
+
+        l8 = new JLabel("Location");
+        l8.setBounds(120,400,200,30);
+        l8.setFont(pixelFont);
+        l8.setForeground(c3);
+        add(l8);
+
+//textfields
+
+        jt1 = new JTextField();
+        jt1.setBounds(340,100,200,30);
+        jt1.setForeground(c3);
+        jt1.setBackground(c1);
+        jt1.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt1);
+
+        jt2 = new JTextField();
+        jt2.setBounds(340,150,200,30);
+        jt2.setForeground(c3);
+        jt2.setBackground(c1);
+        jt2.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt2);
+
+        jt3 = new JTextField();
+        jt3.setBounds(340,250,200,30);
+        jt3.setForeground(c3);
+        jt3.setBackground(c1);
+        jt3.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt3);
+
+        jt4 = new JTextField();
+        jt4.setBounds(340,300,200,30);
+        jt4.setForeground(c3);
+        jt4.setBackground(c1);
+        jt4.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt4);
+
+        jt5 = new JTextField();
+        jt5.setBounds(340,400,200,30);
+        jt5.setForeground(c3);
+        jt5.setBackground(c1);
+        jt5.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt5);
+
+//combobox
+
+        jc1 = new JComboBox(new String[] {"Select","Male","Female"});
+        jc1.setBounds(340,200,200,30);
+        jc1.setForeground(c3);
+        jc1.setBackground(c1);
+        jc1.setFont(new Font("poppins",Font.BOLD,18));
+        add(jc1);
+
+        jc2 = new JComboBox(new String[] {"Select","Yes","No"});
+        jc2.setBounds(340,350,200,30);
+        jc2.setForeground(c3);
+        jc2.setBackground(c1);
+        jc2.setFont(new Font("poppins",Font.BOLD,18));
+        add(jc2);
+
+//buttons
+
+        b1 = new JButton("Add");
+        b1.setBounds(100,530,180,40);
+        b1.setBackground(c1);
+        b1.setFont(pixelFont);
+        b1.setForeground(c3);
+        b1.addActionListener(this);
+        add(b1);
+
+        b2 = new JButton("Back");
+        b2.setBounds(400,530,180,40);
+        b2.setBackground(c1);
+        b2.setFont(pixelFont);
+        b2.setForeground(c3);
+        b2.addActionListener(this);
+        add(b2);
+
+//background
+
+        setUndecorated(true);
+        setLayout(null);
+        getContentPane().setBackground(c2);
+        setLocation(350,100);
+        setSize(1090,665);
+        setVisible(true);
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==b1){
+            try{
+                String name = jt1.getText();
+                String age = jt2.getText();
+                String gender = (String) jc1.getSelectedItem();
+                String car_company = jt3.getText();
+                String car_name =jt4.getText();
+                String available = (String) jc2.getSelectedItem();
+                String location =jt5.getText();
+
+                if (name.isEmpty() || age.isEmpty() ||
+                         "Select".equals(gender) ||
+                        car_company.isEmpty() || car_name.isEmpty() ||
+                        "Select".equals(available)|| location.isEmpty() ){
+
+                    JOptionPane.showMessageDialog(this,
+                            "Please fill all fields before saving!",
+                            "Missing Information",JOptionPane.WARNING_MESSAGE
+                    );
+                    return;
+                }
+
+                //all input are completed
+
+                connects c =new connects();
+                String q = "INSERT INTO driver VALUES ('"+name+"','"+age+"','"+gender+"','"+car_company+"','"+car_name+"','"+available+"','"+location+"')";
+                c.statement.executeUpdate(q);
+
+                JOptionPane.showMessageDialog(this,
+                        "Driver Successfully Added");
+                setVisible(false);
+
+
+            }catch (Exception E){
+                E.printStackTrace();
+            }
+
+        }else{
+            setVisible(false);
+        }
+    }
+
+    public static void main(String[] args) {
+        new addDriver();
+    }
+}
+
+
+Default addRoom 
+
+--------------------------------------------------------------------------------------------------------------------
+
+package HotelManagementSystem;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+public class addRoom extends JFrame implements ActionListener {
+
+    Color c1 = new Color(214, 143, 130);
+    Color c2 = new Color(110,76,74);
+    Color c3 = new Color(53, 28, 28);
+
+    JTextField jt1,jt2;
+    JComboBox jc1,jc2,jc3;
+    JButton b1,b2;
+    JLabel l1,l2,l3,l4,l5,l6;
+
+    addRoom(){
+
+        super("Add Room Page");
+
+        Font pixelFont;
+        try {
+            pixelFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/font/PressStart2P-Regular.ttf"))
+                    .deriveFont(16f);
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(pixelFont);
+        } catch (Exception e) {
+            e.printStackTrace();
+            pixelFont = new Font("Serif", Font.PLAIN, 14);
+        }
+
+//labels
+
+        l1 = new JLabel("Add Rooms");
+        l1.setBounds(400,40,350,60);
+        l1.setFont(pixelFont.deriveFont(30f));
+        l1.setForeground(c3);
+        add(l1);
+
+        l2 = new JLabel("Room Number");
+        l2.setBounds(64,130,200,30);
+        l2.setFont(pixelFont);
+        l2.setForeground(c3);
+        add(l2);
+
+        l3 = new JLabel("Availability");
+        l3.setBounds(64,200,200,30);
+        l3.setFont(pixelFont);
+        l3.setForeground(c3);
+        add(l3);
+
+        l4 = new JLabel("Room Price");
+        l4.setBounds(64,270,200,30);
+        l4.setFont(pixelFont);
+        l4.setForeground(c3);
+        add(l4);
+
+        l5 = new JLabel("Cleaning Status");
+        l5.setBounds(64,340,250,30);
+        l5.setFont(pixelFont);
+        l5.setForeground(c3);
+        add(l5);
+
+        l6 = new JLabel("Bed Type");
+        l6.setBounds(64,410,200,30);
+        l6.setFont(pixelFont);
+        l6.setForeground(c3);
+        add(l6);
+
+//textfield here
+
+        jt1 = new JTextField();
+        jt1.setBounds(390,130,200,30);
+        jt1.setForeground(c3);
+        jt1.setBackground(c1);
+        jt1.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt1);
+
+        jt2 = new JTextField();
+        jt2.setBounds(390,270,200,30);
+        jt2.setForeground(c3);
+        jt2.setBackground(c1);
+        jt2.setFont(new Font("poppins",Font.BOLD,18));
+        add(jt2);
+
+
+
+//comboBox
+
+        jc1 = new JComboBox(new String[]{"Select","Available", "Occupied"});
+        jc1.setFont(new Font("poppins",Font.BOLD,18));
+        jc1.setBounds(390,200,200,30);
+        jc1.setBackground(c1);
+        jc1.setForeground(c3);
+        add(jc1);
+
+        jc2 = new JComboBox(new String[]{"Select","Cleaned", "Dirty"});
+        jc2.setFont(new Font("poppins",Font.BOLD,18));
+        jc2.setBounds(390,340,200,30);
+        jc2.setBackground(c1);
+        jc2.setForeground(c3);
+        add(jc2);
+
+        jc3 = new JComboBox(new String[]{"Select","Single Bed", "Double Bed"});
+        jc3.setFont(new Font("poppins",Font.BOLD,18));
+        jc3.setBounds(390,410,200,30);
+        jc3.setBackground(c1);
+        jc3.setForeground(c3);
+        add(jc3);
+
+//buttons
+
+        b1 = new JButton("Add");
+        b1.setBounds(100,480,180,40);
+        b1.setBackground(c1);
+        b1.setFont(pixelFont);
+        b1.setForeground(c3);
+        b1.addActionListener(this);
+        add(b1);
+
+        b2 = new JButton("Back");
+        b2.setBounds(400,480,180,40);
+        b2.setBackground(c1);
+        b2.setFont(pixelFont);
+        b2.setForeground(c3);
+        b2.addActionListener(this);
+        add(b2);
+
+//background
+
+        setUndecorated(true);
+        setLayout(null);
+        getContentPane().setBackground(c2);
+        setLocation(350,100);
+        setSize(1090,665);
+        setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == b1) {
+            try {
+                String room = jt1.getText().trim();
+                String availability = (String) jc1.getSelectedItem();
+                String status = (String) jc2.getSelectedItem();
+                String price = jt2.getText().trim();
+                String type = (String) jc3.getSelectedItem();
+
+                // Validation: check if fields are empty or default
+                if (room.isEmpty() || price.isEmpty() ||
+                        "Select".equals(availability) ||
+                        "Select".equals(status) ||
+                        "Select".equals(type)) {
+
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Please fill all fields before saving!",
+                            "Missing Information",
+                            JOptionPane.WARNING_MESSAGE
+                    );
+                    return; // stop execution if validation fails
+                }
+
+                // If all fields are valid -> insert into DB
+                connects c = new connects();
+                String q = "INSERT INTO room VALUES ('" + room + "','" + type + "','" + status + "','" + availability + "','" + price + "')";
+                c.statement.executeUpdate(q);
+
+                JOptionPane.showMessageDialog(this, "Room Successfully Added");
+                setVisible(false);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        } else {
+            setVisible(false);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        new addRoom();
+    }
+}
