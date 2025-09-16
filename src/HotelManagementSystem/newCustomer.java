@@ -5,7 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.sql.Date;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 
 public class newCustomer extends JFrame implements ActionListener {
 
@@ -14,11 +16,12 @@ public class newCustomer extends JFrame implements ActionListener {
     Color c2 = new Color(110,76,74);
     Color c3 = new Color(53, 28, 28);
 
-    JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9;
+    JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,date;
     JButton b1,b2;
     JTextField jtName,jtIdNo,jtCountry,jtDepo;
     JComboBox jc1;
-    JRadioButton male,female;
+    JRadioButton jr1,jr2;
+    Choice ch1;
 
     newCustomer(){
         super("Add Employee Page");
@@ -74,7 +77,7 @@ public class newCustomer extends JFrame implements ActionListener {
         add(l6);
 
         l7 = new JLabel("Allocated Room");
-        l7.setBounds(120,350,200,30);
+        l7.setBounds(120,350,280,30);
         l7.setFont(pixelFont);
         l7.setForeground(c3);
         add(l7);
@@ -91,31 +94,48 @@ public class newCustomer extends JFrame implements ActionListener {
         l9.setForeground(c3);
         add(l9);
 
+//radiobutton
+
+        jr1 = new JRadioButton("Male");
+        jr1.setBounds(400,250,100,30);
+        jr1.setBackground(c2);
+        jr1.setForeground(c3);
+        jr1.setFont(new Font("poppins",Font.BOLD,18));
+        add(jr1);
+
+        jr2 = new JRadioButton("Female");
+        jr2.setBounds(500,250,100,30);
+        jr2.setBackground(c2);
+        jr2.setForeground(c3);
+        jr2.setFont(new Font("poppins",Font.BOLD,18));
+        add(jr2);
+
+
 //textfield
 
         jtName = new JTextField();
-        jtName.setBounds(340,100,200,30);
+        jtName.setBounds(400,100,200,30);
         jtName.setForeground(c3);
         jtName.setBackground(c1);
         jtName.setFont(poppins);
         add(jtName);
 
         jtIdNo = new JTextField();
-        jtIdNo.setBounds(340,200,200,30);
+        jtIdNo.setBounds(400,200,200,30);
         jtIdNo.setForeground(c3);
         jtIdNo.setBackground(c1);
         jtIdNo.setFont(poppins);
         add(jtIdNo);
 
         jtCountry = new JTextField();
-        jtCountry.setBounds(340,300,200,30);
+        jtCountry.setBounds(400,300,200,30);
         jtCountry.setForeground(c3);
         jtCountry.setBackground(c1);
         jtCountry.setFont(poppins);
         add(jtCountry);
 
         jtDepo = new JTextField();
-        jtDepo.setBounds(340,100,450,30);
+        jtDepo.setBounds(400,450,200,30);
         jtDepo.setForeground(c3);
         jtDepo.setBackground(c1);
         jtDepo.setFont(poppins);
@@ -124,7 +144,7 @@ public class newCustomer extends JFrame implements ActionListener {
 //combobox
 
         jc1 = new JComboBox(new String[] {"Select","Aadhar","Passport","Voter ID","Driving License"});
-        jc1.setBounds(340,150,200,30);
+        jc1.setBounds(400,150,200,30);
         jc1.setForeground(c3);
         jc1.setBackground(c1);
         jc1.setFont(poppins);
@@ -132,15 +152,32 @@ public class newCustomer extends JFrame implements ActionListener {
 
 //custom choice from the database
 
-        Choice ch1=new Choice();
+        ch1=new Choice();
         try {
 
             connects c =new connects();
             ResultSet resultSet = c.statement.executeQuery("SELECT * FROM room WHERE availability = 'Available' ");
-
+            while(resultSet.next()){
+                ch1.add(resultSet.getString("room_number"));
+            }
         }catch (Exception e){
             e.printStackTrace();
         }
+        ch1.setBounds(400,350,200,30);
+        ch1.setFont(poppins);
+        ch1.setForeground(c3);
+        ch1.setBackground(c1);
+        add(ch1);
+
+//date
+
+        Date now = new Date(System.currentTimeMillis());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        date = new JLabel(sdf.format(now));
+        date.setBounds(400,400,250,30);
+        date.setFont(poppins);
+        date.setForeground(c3);
+        add(date);
 
 
 //butons
@@ -174,7 +211,37 @@ public class newCustomer extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==b1){
-            ;
+
+            connects c = new connects();
+            String radioButton = null;
+            if (jr1.isSelected()) radioButton="Male";
+            else if (jr2.isSelected()) {
+                radioButton="Female";
+            }
+
+            String s1 = jtName.getText();                  //name
+            String s2 =  (String) jc1.getSelectedItem();                  //id type
+            String s3 = jtIdNo.getText();                  //id no
+            String s4 = radioButton;                  //gender
+            String s5 = jtCountry.getText();                  //country
+            String s6 = ch1.getSelectedItem();                  //room
+            String s7 = date.getText();                  //check in
+            String s8 = jtDepo.getText();                  //deposite
+
+
+
+            try {
+                String addNew = "INSERT INTO customer VALUES ('"+s1+"','"+s2+"','"+s3+"','"+s4+"','"+s5+"','"+s6+"','"+s7+"','"+s8+"')";
+                String update = "UPDATE room SET availability = 'Occupied' WHERE room_number ='" + s6 + "'";
+                c.statement.executeUpdate(addNew);
+                c.statement.executeUpdate(update);
+                JOptionPane.showMessageDialog(null,"Added Successfully");
+                setVisible(false);
+
+            }catch (Exception E){
+                E.printStackTrace();
+            }
+
         }else {
             dispose();
         }

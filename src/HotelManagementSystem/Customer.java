@@ -48,6 +48,12 @@ public class Customer extends JFrame {
         newCustomer.setForeground(c3);
         newCustomer.setFont(pixelFont);
         panel1.add(newCustomer);
+        newCustomer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new newCustomer();
+            }
+        });
 
         updateCustomer = new JButton("Update Customer");
         updateCustomer.setBounds(20,240,255,40);
