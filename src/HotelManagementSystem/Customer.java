@@ -61,6 +61,12 @@ public class Customer extends JFrame {
         updateCustomer.setForeground(c3);
         updateCustomer.setFont(pixelFont);
         panel1.add(updateCustomer);
+        updateCustomer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new updateCustomer();
+            }
+        });
 
         extraFees = new JButton("Extra Fees");
         extraFees.setBounds(20,300,255,40);
@@ -68,6 +74,12 @@ public class Customer extends JFrame {
         extraFees.setForeground(c3);
         extraFees.setFont(pixelFont);
         panel1.add(extraFees);
+        extraFees.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new extraFees();
+            }
+        });
 
         customerInfo = new JButton("Customer Info");
         customerInfo.setBounds(20,360,255,40);
@@ -75,6 +87,12 @@ public class Customer extends JFrame {
         customerInfo.setForeground(c3);
         customerInfo.setFont(pixelFont);
         panel1.add(customerInfo);
+        customerInfo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new searchCustomer();
+            }
+        });
 
         pickUp = new JButton("Pick-up");
         pickUp.setBounds(20,420,255,40);

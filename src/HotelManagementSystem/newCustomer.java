@@ -156,7 +156,7 @@ public class newCustomer extends JFrame implements ActionListener {
         try {
 
             connects c =new connects();
-            ResultSet resultSet = c.statement.executeQuery("SELECT * FROM room WHERE availability = 'Available' ");
+            ResultSet resultSet = c.statement.executeQuery("SELECT * FROM room WHERE availability = 'Unoccupied' ");
             while(resultSet.next()){
                 ch1.add(resultSet.getString("room_number"));
             }

@@ -74,6 +74,12 @@ public class Room extends JFrame {
         btnUR.setForeground(c3);
         btnUR.setFont(pixelFont);
         panel1.add(btnUR);
+        btnUR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new updateRoom();
+            }
+        });
 
         back = new JButton("Back");
         back.setBounds(30,705,235,40);

@@ -122,7 +122,7 @@ public class Staff extends JFrame implements ActionListener{
             new allManager();
         }
         else if (e.getSource()==search) {
-            ;
+            new searchStaff();
         }
         else {
             dispose();
