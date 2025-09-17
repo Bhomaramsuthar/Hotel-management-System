@@ -61,6 +61,12 @@ public class Room extends JFrame {
         btnSR.setForeground(c3);
         btnSR.setFont(pixelFont);
         panel1.add(btnSR);
+        btnSR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new searchRoom();
+            }
+        });
 
         btnUR = new JButton("Update Room");
         btnUR.setBounds(30,300,235,40);
