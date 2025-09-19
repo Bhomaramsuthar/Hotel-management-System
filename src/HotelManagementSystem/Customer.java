@@ -12,7 +12,7 @@ public class Customer extends JFrame {
     Color c2 = new Color(110,76,74);
     Color c3 = new Color(53, 28, 28);
 
-    JButton newCustomer,updateCustomer,checkOut,extraFees,customerInfo,pickUp,back;
+    JButton newCustomer,updateCustomer,checkOut,extraFees,customerInfo,back;
 
     Customer(){
         super("Customer Page");
@@ -94,19 +94,19 @@ public class Customer extends JFrame {
             }
         });
 
-        pickUp = new JButton("Pick-up");
-        pickUp.setBounds(20,420,255,40);
-        pickUp.setBackground(c1);
-        pickUp.setForeground(c3);
-        pickUp.setFont(pixelFont);
-        panel1.add(pickUp);
 
         checkOut = new JButton("Check Out");
-        checkOut.setBounds(20,480,255,40);
+        checkOut.setBounds(20,420,255,40);
         checkOut.setBackground(c1);
         checkOut.setForeground(c3);
         checkOut.setFont(pixelFont);
         panel1.add(checkOut);
+        checkOut.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new checkOut();
+            }
+        });
 
         back = new JButton("Back");
         back.setBounds(30,705,235,40);

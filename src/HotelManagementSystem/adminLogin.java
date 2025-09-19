@@ -5,7 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class adminLogin extends JFrame implements ActionListener {
     public
@@ -80,8 +82,6 @@ public class adminLogin extends JFrame implements ActionListener {
 
         add(label);
 
-
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(new Color(110,76,74));
         setLayout(null);
@@ -93,27 +93,49 @@ public class adminLogin extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == b1){
+            String user = t1.getText();
+            String pass = new String(passwordField.getPassword());
+
+            if (user.isEmpty() || pass.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please enter both Username & Password");
+                return;
+            }
+
             try {
                 connects c = new connects();
-                String user = t1.getText();
-                String pass = passwordField.getText();
+                // Use a PreparedStatement to prevent SQL Injection
+                String query = "SELECT roles FROM login WHERE username = ? AND password = ?";
+                PreparedStatement pstmt = c.connection.prepareStatement(query);
+                pstmt.setString(1, user);
+                pstmt.setString(2, pass);
 
-                String q = "SELECT * FROM login WHERE username = '"+user+"'  AND password = '"+pass+"'";
-                ResultSet resultSet = c.statement.executeQuery(q);
+                ResultSet resultSet = pstmt.executeQuery();
+
                 if (resultSet.next()){
-                    setVisible(false);
-                    new Admin();
-                }else{
-                    JOptionPane.showMessageDialog(null,"Invalid Username or Password ");
+                    String userRole = resultSet.getString("roles");
+                    if ("Admin".equalsIgnoreCase(userRole)){
+                        setVisible(false);
+                        new Admin();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Access Denied: You do not have Admin privileges.");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid Username or Password.");
                 }
 
-            }catch (Exception E){
-                E.printStackTrace();
+                // Close resources to prevent memory leaks
+                resultSet.close();
+                pstmt.close();
+                c.connection.close();
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Database Error: " + ex.getMessage());
             }
         }
         else{
             dispose();
-            new Dashboard();
+            new Dashboard(); // Assuming this is the class for the main dashboard
         }
     }
 
